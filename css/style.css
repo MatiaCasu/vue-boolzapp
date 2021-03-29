@@ -73,13 +73,9 @@ section.chat > .main{
   padding: 5px;
 }
 
-.address-book-nav, .notification-setting{
-  padding: 5px;
-}
-
-section.user > .main{
-  flex-direction: column;
-  height: calc(100% - 60px);
+.head .icons{
+ color: #B1B1B1;
+ margin: 0 10px;
 }
 
 ul.icons, .user-info, .contact-info.current{
@@ -88,6 +84,47 @@ ul.icons, .user-info, .contact-info.current{
 /* /commons */
 
 /* User SIDE */
+section.user > .main{
+  flex-direction: column;
+  height: calc(100% - 60px);
+}
+
+.notification-setting, .address-book-nav{
+  padding: 5px;
+}
+
+.notification-setting{
+  background-color: #8EDAFC;
+  align-items: center;
+}
+
+.notification-icon{
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  background-color: #fff;
+  font-size: 20px;
+  color: #8EDAFC;
+  border-radius: 100%;
+  margin: 10px;
+}
+
+.address-book-nav button, .address-book-nav input{
+  background-color: #fff;
+  border: #EAEAEA 1px solid;
+}
+
+.address-book-nav button{
+  padding: 5px 20px;
+  color: #B1B1B1;
+}
+
+.address-book-nav input{
+  flex-basis: 100%;
+  padding: 5px;
+}
+
 .address-book{
   overflow-y: scroll;
   flex-basis: 100%;

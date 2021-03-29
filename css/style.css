@@ -59,7 +59,7 @@ section.chat{
   justify-content: space-between;
 }
 
-section.chat > .main{
+.main-chat{
   background-image: url(../img/mine.jpg);
   background-size: contain;
   height: calc(100% - 120px);
@@ -84,7 +84,7 @@ ul.icons, .user-info, .contact-info.current{
 /* /commons */
 
 /* User SIDE */
-section.user > .main{
+.main-user{
   flex-direction: column;
   height: calc(100% - 60px);
 }
@@ -145,4 +145,32 @@ section.user > .main{
 /* Chat SIDE */
 section.chat > .head{
   border-left: #DBDBD2 1px solid;
+}
+
+.main-chat{
+  overflow-y: scroll;
+}
+
+.main-chat:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.message{
+  width: 40%;
+  border-radius: 5px;
+  margin: 5px 50px;
+  background-color: white;
+  float: left;
+}
+
+.message.input{
+  background-color: #D5F9BA;
+  float: right;
+}
+
+.info-message{
+  text-align: right;
+  font-size: 8px;
 }

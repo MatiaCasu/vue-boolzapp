@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.flex-box{
+  display: flex;
+}
+
 .body-wrap{
   background: linear-gradient(#009688 100px, #DBDBD2 100px);
   height: 100vh;
@@ -11,9 +15,31 @@
   padding: 20px;
 }
 
+.main-container, .main-container > section {
+  height: 100%;
+}
+
 .main-container{
   width: 80%;
-  height: 100%;
-  background-color: lightblue;
   margin: 0 auto;
+}
+
+section.user{
+  flex-basis: 30%;
+  background-color: #fff;
+}
+
+section.chat{
+  background-color: lightgreen;
+  flex-basis: 70%;
+}
+
+.head, section.chat > .foot{
+  height: 60px;
+  background-color: pink;
+}
+
+section.chat > .foot{
+  position: relative;
+  top: calc(100% - 120px);   /* 100% - (altezza footer * 2) */
 }

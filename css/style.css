@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-wrap{
+  background: linear-gradient(#009688 100px, #DBDBD2 100px);
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  padding: 20px;
+}
+
+.main-container{
+  width: 80%;
+  height: 100%;
+  background-color: lightblue;
+  margin: 0 auto;
+}

@@ -4,24 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- /font-awesome -->
+  <!-- font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- font -->
   <link rel="stylesheet" href="css/style.css">
   <title>Boolzapp</title>
 </head>
 <body>
   <div class="body-wrap">
     <div class="main-container flex-box">
+      <!-- USER AND ADDRESS BOOK SIDE -->
       <section class="user">
-        <div class="head">
+        <!-- USER HEADER -->
+        <div class="head flex-box">
+          <div class="user-info flex-box">
+            <img class="users-img" src="img/avatar_8.jpg" alt="">
+            <span class="users-name">
+              Nome utente
+            </span>
+          </div>
+          <ul class="list-inline icons">
+            <li><i class="fas fa-circle-notch"></i></li>
+            <li><i class="fas fa-circle-notch"></i></li>
+            <li><i class="fas fa-circle-notch"></i></li>
+          </ul>
         </div>
+        <!-- /USER HEADER -->
+        <!-- USER MAIN -->
+        <div class="main flex-box">
+          <div class="notification-setting">
+            <i class="fas fa-circle-notch"></i>
+          </div>
+          <div class="address-book-nav flex-box">
+            <button type="button" name="button"><i class="fas fa-circle-notch"></i></button>
+            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          </div>
+          <div class="address-book">
+            <ul>
+              <li class="contact-info">
+                <img class="users-img" src="img/avatar_8.jpg" alt="">
+                <span class="users-name">
+                  Nome Utente
+                </span>
+              </li>
+              <li class="contact-info">
+                <img class="users-img" src="img/avatar_8.jpg" alt="">
+                <span class="users-name">
+                  Nome utente
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /USER MAIN -->
       </section>
+      <!-- USER AND ADDRESS BOOK SIDE -->
+      <!-- CHAT SIDE -->
       <section class="chat">
-        <div class="head">
+        <!-- CHAT HEADER -->
+        <div class="head flex-box">
+          <div class="current contact-info flex-box">
+            <img class="users-img" src="img/avatar_8.jpg" alt="">
+            <div>
+              <div class="users-name">
+                Nome utente
+              </div>
+              <p>Ultimo accesso</p>
+            </div>
+          </div>
+          <ul class="list-inline icons">
+            <li><i class="fas fa-circle-notch"></i></li>
+            <li><i class="fas fa-circle-notch"></i></li>
+            <li><i class="fas fa-circle-notch"></i></li>
+          </ul>
         </div>
+        <!-- /CHAT HEADER -->
+        <!-- /CHAT MAIN -->
+        <div class="main">
+
+        </div>
+        <!-- /CHAT MAIN -->
+        <!-- /CHAT FOOT -->
         <div class="foot">
         </div>
+        <!-- /CHAT FOOT -->
       </section>
+      <!-- /CHAT SIDE -->
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

@@ -1,21 +1,42 @@
+/* Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e
+dall’interlocutore (bianco) assegnando due classi CSS diverse.
+Visualizzazione dinamica della lista contatti: tramite la direttiva v-for , visualizzare
+nome e immagine di ogni contatto */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.flex-box{
+.flex-box, .list-inline{
   display: flex;
 }
 
+ul > li{
+  list-style: none;
+  padding: 5px;
+}
+/* mix */
+
+/* backgrounds */
+.head{
+  background-color: #EAEAEA;
+}
+
+.foot, .address-book-nav{
+  background-color: #f3eeea;
+}
+/* /backgrounds */
+
+/* main structure */
 .body-wrap{
-  background: linear-gradient(#009688 100px, #DBDBD2 100px);
+  background: linear-gradient(#009688 100px, #d8dbd5 100px);
   height: 100vh;
   font-family: 'Lato', sans-serif;
   padding: 20px;
 }
 
-.main-container, .main-container > section {
+.main-container, .main-container > section, .head > *, .address-book{
   height: 100%;
 }
 
@@ -30,16 +51,61 @@ section.user{
 }
 
 section.chat{
-  background-color: lightgreen;
   flex-basis: 70%;
 }
 
 .head, section.chat > .foot{
   height: 60px;
-  background-color: pink;
+  justify-content: space-between;
 }
 
-section.chat > .foot{
-  position: relative;
-  top: calc(100% - 120px);   /* 100% - (altezza footer * 2) */
+section.chat > .main{
+  background-image: url(../img/mine.jpg);
+  background-size: contain;
+  height: calc(100% - 120px);
+}
+/* main structure */
+
+/* commons */
+.user-info img, .contact-info img{
+  height: 100%;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+.address-book-nav, .notification-setting{
+  padding: 5px;
+}
+
+section.user > .main{
+  flex-direction: column;
+  height: calc(100% - 60px);
+}
+
+ul.icons, .user-info, .contact-info.current{
+  align-items: center;
+}
+/* /commons */
+
+/* User SIDE */
+.address-book{
+  overflow-y: scroll;
+  flex-basis: 100%;
+}
+
+.address-book li{
+  height: 65px;
+  overflow: hidden;
+}
+
+.address-book .contact-info{
+  display: flex;
+  align-items: flex-start;
+  border-top: #EAEAEA 1px solid;
+}
+/* /User SIDE */
+
+/* Chat SIDE */
+section.chat > .head{
+  border-left: #DBDBD2 1px solid;
 }

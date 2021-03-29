@@ -15,7 +15,7 @@
   <title>Boolzapp</title>
 </head>
 <body>
-  <div class="body-wrap">
+  <div id="app" class="body-wrap">
     <div class="main-container flex-box">
       <!-- USER AND ADDRESS BOOK SIDE -->
       <section class="user">
@@ -55,17 +55,12 @@
           <!-- /ADDRESS BOOK NAVIGATION -->
           <!-- ADDRESS BOOK -->
           <ul class="address-book">
-            <li class="contact-info">
-              <img class="users-img" src="img/avatar_8.jpg" alt="">
+            <li class="contact-info" v-for="(item, i) in contacts">
+              <img class="users-img" :src="contacts[i].srcImg" alt="">
               <span class="users-name">
-                Nome Utente
+                {{contacts[i].nome}}
               </span>
             </li>
-            <li class="contact-info">
-              <img class="users-img" src="img/avatar_8.jpg" alt="">
-              <span class="users-name">
-                Nome utente
-              </span>
             </li>
           </ul>
           <!-- /ADDRESS BOOK -->

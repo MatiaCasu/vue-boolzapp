@@ -6,7 +6,6 @@ nome e immagine di ogni contatto */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: rgba(32, 129, 167, 0.71); */
 }
 
 .flex-box, .list-inline{

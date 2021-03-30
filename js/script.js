@@ -1,27 +1,51 @@
 var app = new Vue({
   el: "#app",
   data: {
-    contacts: [
-    {
+    index: 0,
+    contacts:
+    [{
       nome: "Isabel",
+      activeClass: "",
       srcImg: "img/avatar_1.jpg",
-    },
-    {
+      messages: [
+        {
+          text: "ciaoooo!",
+        },
+        {
+          text: "come va?"
+        }]
+      },
+      {
       nome: "Nicola",
+      activeClass: "",
       srcImg: "img/avatar_3.jpg",
-    },
-    {
+      messages: [
+        {
+          text: "buongiorno",
+        },
+        {
+          text: "buongiornooooooo",
+        },
+        {
+          text: "CIAOOOOOOOH",
+        }]
+      },
+      {
       nome: "Arianna",
-      srcImg: "img/avatar_2.jpg",
-    },
-    {
-      nome: "Francesca",
-      srcImg: "img/avatar_7.jpg",
-    },
-    {
-      nome: "Mario",
-      srcImg: "img/avatar_6.jpg",
+      activeClass: "",
+      srcImg: "img/avatar_5.jpg",
+      messages: [
+        {
+          text: "prova!",
+        },
+        {
+          text: "provaaaaaah"
+        }]
+      },
+  ]},
+  methods: {
+    activeContact: function(fIndex){
+      this.index = fIndex;
     }
-    ]
   }
 });

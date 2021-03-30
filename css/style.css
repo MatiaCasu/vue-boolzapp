@@ -116,6 +116,11 @@ ul.icons, .user-info, .contact-info.current{
   margin: 10px;
 }
 
+.notification-text a, .current.contact-info p{
+  font-size: 12px;
+  color: #6B7376;
+}
+
 .address-book-nav button, .address-book-nav input{
   background-color: #fff;
   border: #EAEAEA 1px solid;
@@ -141,6 +146,10 @@ ul.icons, .user-info, .contact-info.current{
   overflow: hidden;
 }
 
+.address-book li.active{
+  background-color: lightgrey;
+}
+
 .address-book .contact-info{
   display: flex;
   align-items: flex-start;
@@ -164,6 +173,7 @@ section.chat > .head{
 }
 
 .message{
+  padding: 15px;
   width: 40%;
   border-radius: 5px;
   margin: 5px 50px;

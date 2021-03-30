@@ -55,7 +55,7 @@
           <!-- /ADDRESS BOOK NAVIGATION -->
           <!-- ADDRESS BOOK -->
           <ul class="address-book">
-            <li class="contact-info" v-for="(item, i) in contacts">
+            <li class="contact-info" v-for="(contact, i) in contacts" @click="activeContact(i)">
               <img class="users-img" :src="contacts[i].srcImg" alt="">
               <span class="users-name">
                 {{contacts[i].nome}}
@@ -73,10 +73,10 @@
         <!-- CHAT HEADER -->
         <div class="head flex-box">
           <div class="current contact-info flex-box">
-            <img class="users-img" src="img/avatar_8.jpg" alt="">
+            <img class="users-img" :src="contacts[index].srcImg" alt="">
             <div>
               <div class="users-name">
-                Nome utente
+                {{contacts[index].nome}}
               </div>
               <p>Ultimo accesso</p>
             </div>
@@ -90,21 +90,9 @@
         <!-- /CHAT HEADER -->
         <!-- /CHAT MAIN -->
         <ul class="main-chat">
-          <li class="message">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <li class="message" v-for="message in contacts[index].messages">
+            <p>{{message.text}}</p>
             <p class="info-message">Data/Ora</p>
-          </li>
-          <li class="message input">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p class="info-message"></p>
-          </li>
-          <li class="message input">
-            <p>Prova</p>
-            <p class="info-message"></p>
-          </li>
-          <li class="message">
-            <p>Prova</p>
-            <p class="info-message"></p>
           </li>
         </ul>
         <!-- /CHAT MAIN -->

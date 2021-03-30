@@ -44,7 +44,11 @@ var app = new Vue({
       },
   ]},
   methods: {
-    activeContact: function(fIndex){
+    activeContact: function(array, fIndex){
+      array.forEach((element)=>{
+        element.activeClass = "";
+      });
+      array[fIndex].activeClass = "active";
       this.index = fIndex;
     }
   }

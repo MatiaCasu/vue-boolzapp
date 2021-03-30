@@ -146,7 +146,7 @@ ul.icons, .user-info, .contact-info.current{
   overflow: hidden;
 }
 
-.address-book li.active{
+.contact-info.active{
   background-color: lightgrey;
 }
 

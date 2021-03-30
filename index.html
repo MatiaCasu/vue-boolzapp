@@ -55,12 +55,11 @@
           <!-- /ADDRESS BOOK NAVIGATION -->
           <!-- ADDRESS BOOK -->
           <ul class="address-book">
-            <li class="contact-info" v-for="(contact, i) in contacts" @click="activeContact(i)">
-              <img class="users-img" :src="contacts[i].srcImg" alt="">
+            <li class="contact-info" :class="contact.activeClass" v-for="(contact, i) in contacts" @click="activeContact(contacts, i)">
+              <img class="users-img" :src="contact.srcImg" alt="">
               <span class="users-name">
-                {{contacts[i].nome}}
+                {{contact.nome}}
               </span>
-            </li>
             </li>
           </ul>
           <!-- /ADDRESS BOOK -->

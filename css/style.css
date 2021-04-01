@@ -166,6 +166,7 @@ section.chat > .head{
 
 .message{
   padding: 15px;
+  align-self: flex-start;
   max-width: 60%;
   border-radius: 5px;
   background-color: #fff;

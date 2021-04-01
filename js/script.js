@@ -2,6 +2,10 @@ var app = new Vue({
   el: "#app",
   data: {
     index: 0,
+    inputMessage: {
+      text: "",
+      status: 'sent'
+    },
     contacts:
     [{
       nome: "Isabel",
@@ -9,11 +13,9 @@ var app = new Vue({
       srcImg: "img/avatar_1.jpg",
       messages: [
         {
-          text: "ciaoooo!",
-        },
-        {
-          text: "come va?"
-        }]
+          text: "we",
+        }
+      ]
       },
       {
       nome: "Nicola",
@@ -28,7 +30,8 @@ var app = new Vue({
         },
         {
           text: "CIAOOOOOOOH",
-        }]
+        }
+      ]
       },
       {
       nome: "Arianna",
@@ -39,13 +42,26 @@ var app = new Vue({
           text: "prova!",
         },
         {
-          text: "provaaaaaah"
+          text: "provaaaaaah",
         },
         {
-          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         }
       ]
       },
+      {
+      nome: "Francesca",
+      activeClass: "",
+      srcImg: "img/avatar_6.jpg",
+      messages: [
+        {
+          text: "prova",
+        },
+        {
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        }
+      ]
+      }
   ]},
   methods: {
     activeContact: function(array, fIndex){
@@ -54,6 +70,14 @@ var app = new Vue({
       });
       this.index = fIndex;
       array[fIndex].activeClass = "active";
+    },
+    addMessage: function(){
+      // lacks support for old browsers
+      // const copy = Object.assign({}, this.inputMessage);
+
+      const copy = {...this.inputMessage};
+      this.inputMessage.text !== "" ? this.contacts[this.index].messages.push(copy) : this.inputMessage.text == "";
+      this.inputMessage.text = "";
     }
   }
 });

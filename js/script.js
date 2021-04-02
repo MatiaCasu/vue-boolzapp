@@ -2,10 +2,16 @@ var app = new Vue({
   el: "#app",
   data: {
     index: 0,
+    // Messaggio Utente/Risposta automatica
     inputMessage: {
       text: "",
       status: 'sent'
     },
+    answer: {
+      text: "ook",
+    },
+    // /Messaggio Utente/Risposta automatica
+    // Contatti Rubrica
     contacts:
     [{
       nome: "Isabel",
@@ -43,9 +49,6 @@ var app = new Vue({
         },
         {
           text: "provaaaaaah",
-        },
-        {
-          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         }
       ]
       },
@@ -63,6 +66,8 @@ var app = new Vue({
       ]
       }
   ]},
+  // /Contatti Rubrica
+  // Funzioni
   methods: {
     activeContact: function(array, fIndex){
       array.forEach((element)=>{
@@ -72,12 +77,16 @@ var app = new Vue({
       array[fIndex].activeClass = "active";
     },
     addMessage: function(){
-      // lacks support for old browsers
-      // const copy = Object.assign({}, this.inputMessage);
-
       const copy = {...this.inputMessage};
       this.inputMessage.text !== "" ? this.contacts[this.index].messages.push(copy) : this.inputMessage.text == "";
       this.inputMessage.text = "";
+    },
+    autoAnswer: function(){
+      let appScopeThis = this;
+      setTimeout(function(){
+        appScopeThis.contacts[appScopeThis.index].messages.push(appScopeThis.answer);
+      },1000);
     }
   }
+  // Funzioni
 });

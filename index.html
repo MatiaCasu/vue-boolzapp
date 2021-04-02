@@ -82,8 +82,8 @@
           </div>
           <ul class="list-inline icons">
             <li><i class="fas fa-search"></i></li>
-            <li><i class="fas fa-circle-notch"></i></li>
             <li><i class="fas fa-paperclip"></i></li>
+            <li><i class="fas fa-ellipsis-v"></i></li>
           </ul>
         </div>
         <!-- /CHAT HEADER -->
@@ -98,7 +98,7 @@
         <!-- /CHAT FOOT -->
         <div class="foot flex-box">
           <i class="far fa-smile"></i>
-          <input type="text" name="user-message" v-model="inputMessage.text" v-on:keydown.13="addMessage" placeholder="Scrivi un messaggio">
+          <input type="text" name="user-message" v-model="inputMessage.text" v-on:keydown.13="addMessage(); autoAnswer();" placeholder="Scrivi un messaggio">
           <i class="fas fa-microphone"></i>
         </div>
         <!-- /CHAT FOOT -->

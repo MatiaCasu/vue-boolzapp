@@ -20,6 +20,7 @@ var app = new Vue({
       messages: [
         {
           text: "we",
+          date: dayjs().subtract(9, 'm').format('DD/MM/YY  HH:mm:ss')
         }
       ]
       },
@@ -30,12 +31,15 @@ var app = new Vue({
       messages: [
         {
           text: "buongiorno",
+          date: dayjs().subtract(40, 'm').format('DD/MM/YY  HH:mm:ss')
         },
         {
           text: "buongiornooooooo",
+          date: dayjs().subtract(10, 'm').format('DD/MM/YY  HH:mm:ss')
         },
         {
           text: "CIAOOOOOOOH",
+          date: dayjs().subtract(9, 'm').format('DD/MM/YY  HH:mm:ss')
         }
       ]
       },
@@ -45,10 +49,8 @@ var app = new Vue({
       srcImg: "img/avatar_5.jpg",
       messages: [
         {
-          text: "prova!",
-        },
-        {
-          text: "provaaaaaah",
+          text: "Come va?",
+          date: dayjs().subtract(10, 'y').format('DD/MM/YY  HH:mm:ss')
         }
       ]
       },
@@ -59,9 +61,7 @@ var app = new Vue({
       messages: [
         {
           text: "prova",
-        },
-        {
-          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          date: dayjs().subtract(1, 'm').format('DD/MM/YY  HH:mm:ss')
         }
       ]
       }
@@ -77,15 +77,17 @@ var app = new Vue({
       array[fIndex].activeClass = "active";
     },
     addMessage: function(){
+      this.inputMessage.date = dayjs().format('DD/MM/YY  HH:mm:ss');
       const copy = {...this.inputMessage};
       this.inputMessage.text !== "" ? this.contacts[this.index].messages.push(copy) : this.inputMessage.text == "";
       this.inputMessage.text = "";
+      this.answer.date = dayjs().add(1, 's').format('DD/MM/YY  HH:mm:ss');
     },
     autoAnswer: function(){
       let appScopeThis = this;
       setTimeout(function(){
         appScopeThis.contacts[appScopeThis.index].messages.push(appScopeThis.answer);
-      },1000);
+      }, 1000);
     }
   }
   // Funzioni

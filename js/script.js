@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     index: 0,
+    searchInput: "",
     // Messaggio Utente/Risposta automatica
     inputMessage: {
       text: "",
@@ -14,9 +15,9 @@ var app = new Vue({
     // Contatti Rubrica
     contacts:
     [{
-      nome: "Isabel",
-      activeClass: "",
+      name: "Isabel",
       srcImg: "img/avatar_1.jpg",
+      visible: true,
       messages: [
         {
           text: "we",
@@ -25,9 +26,9 @@ var app = new Vue({
       ]
       },
       {
-      nome: "Nicola",
-      activeClass: "",
+      name: "Nicola",
       srcImg: "img/avatar_3.jpg",
+      visible: true,
       messages: [
         {
           text: "buongiorno",
@@ -44,9 +45,9 @@ var app = new Vue({
       ]
       },
       {
-      nome: "Arianna",
-      activeClass: "",
+      name: "Arianna",
       srcImg: "img/avatar_5.jpg",
+      visible: true,
       messages: [
         {
           text: "Come va?",
@@ -55,9 +56,9 @@ var app = new Vue({
       ]
       },
       {
-      nome: "Francesca",
-      activeClass: "",
+      name: "Francesca",
       srcImg: "img/avatar_6.jpg",
+      visible: true,
       messages: [
         {
           text: "prova",
@@ -69,6 +70,16 @@ var app = new Vue({
   // /Contatti Rubrica
   // Funzioni
   methods: {
+    getInput: function(){
+      this.contacts.forEach((contact) => {
+        if(contact.name.toLowerCase().includes(this.searchInput.toLowerCase())){
+          contact.visible = true;
+        }
+        else{
+          contact.visible = false;
+        }
+      });
+    },
     activeContact: function(array, fIndex){
       array.forEach((element)=>{
         element.activeClass = "";

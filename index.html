@@ -50,15 +50,15 @@
           <!-- ADDRESS BOOK NAVIGATION -->
           <div class="address-book-nav flex-box">
             <button type="button" name="button"><i class="fas fa-search"></i></button>
-            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" v-model="searchInput" v-on:keyup="getInput" name="" value="" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /ADDRESS BOOK NAVIGATION -->
           <!-- ADDRESS BOOK -->
           <ul class="address-book">
-            <li class="contact-info" :class="contact.activeClass" v-for="(contact, i) in contacts" @click="activeContact(contacts, i)">
-              <img class="users-img" :src="contact.srcImg" :alt="contact.nome">
+            <li class="contact-info" :class="contact.activeClass" v-if="contact.visible" v-for="(contact, i) in contacts" @click="activeContact(contacts, i)">
+              <img class="users-img" :src="contact.srcImg" :alt="contact.name">
               <span class="users-name">
-                {{contact.nome}}
+                {{contact.name}}
               </span>
             </li>
           </ul>
@@ -75,7 +75,7 @@
             <img class="users-img" :src="contacts[index].srcImg" alt="">
             <div>
               <div class="users-name">
-                {{contacts[index].nome}}
+                {{contacts[index].name}}
               </div>
               <p>Ultimo accesso</p>
             </div>

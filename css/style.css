@@ -29,6 +29,7 @@ ul > li{
   background: linear-gradient(#009688 100px, #d8dbd5 100px);
   height: 100vh;
   font-family: 'Lato', sans-serif;
+  font-size: 14px;
   padding: 20px;
 }
 
@@ -131,6 +132,7 @@ ul.icons, .user-info, .contact-info.current{
 .address-book-nav input{
   flex-basis: 100%;
   padding: 5px;
+  font-size: 12px;
 }
 
 .address-book{
